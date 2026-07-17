@@ -7,7 +7,7 @@ ASSEMBLY REQUIRED WEBSITE UPDATE
 5. Commit the changes and wait for GitHub Pages to redeploy.
 
 All estimate buttons in this package point to your Google Form:
-https://assemblyrequiredms.com/request-estimate.html?usp=preview
+https://assemblyrequiredms.com/request-estimate.html
 
 The four existing location pages are retained:
 - handyman-madison-ms.html
