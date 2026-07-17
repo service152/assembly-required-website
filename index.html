@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Handyman Services in Madison MS | Assembly Required</title>
+  <meta name="description" content="Assembly Required provides insured, owner-operated handyman services and home repair help for busy homeowners in Madison, Gluckstadt, Canton and Ridgeland MS. Repairs, installs, drywall, mounting, pressure washing, assembly and punch lists.">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Libre+Baskerville:wght@700&display=swap');
+
+    :root{
+      --navy:#102a43;
+      --navy2:#071827;
+      --navy3:#0b2136;
+      --red:#a64238;
+      --brass:#b98542;
+      --brass2:#ddb46c;
+      --cream:#f6efe2;
+      --paper:#fffaf3;
+      --white:#ffffff;
+      --ink:#111827;
+      --muted:#667085;
+      --line:rgba(255,255,255,.14);
+      --line-dark:rgba(16,42,67,.14);
+      --shadow:0 30px 90px rgba(7,24,39,.28);
+      --softshadow:0 16px 44px rgba(7,24,39,.10);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+
+    .grain:before{
+      content:"";position:absolute;inset:0;pointer-events:none;opacity:.11;mix-blend-mode:overlay;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+    }
+    .blueprint:before{
+      content:"";position:absolute;inset:0;pointer-events:none;opacity:.075;
+      background:linear-gradient(rgba(16,42,67,.18) 1px, transparent 1px),linear-gradient(90deg,rgba(16,42,67,.18) 1px, transparent 1px);
+      background-size:46px 46px;
+      mask-image:linear-gradient(180deg,transparent,black 15%,black 85%,transparent);
+    }
+
+    .topbar{
+      background:var(--navy2);color:white;text-align:center;padding:10px 18px;
+      font-size:13px;font-weight:900;letter-spacing:.03em;border-bottom:3px solid var(--brass);
+    }
+    .topbar span,.topbar a{color:var(--brass2)}
+
+    .nav{
+      position:sticky;top:0;z-index:90;background:rgba(7,24,39,.76);
+      backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.12);
+    }
+    .nav-inner{
+      max-width:1260px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:22px;
+    }
+    .brand{display:flex;align-items:center;gap:14px;color:white;font-family:Cinzel,serif;font-weight:900;letter-spacing:-.04em;line-height:1}
+    .brand img{width:62px;height:62px;object-fit:contain;border-radius:50%;background:white;padding:5px;box-shadow:0 10px 26px rgba(0,0,0,.20)}
+    .brand small{display:block;color:var(--brass2);font-family:Inter,Arial,sans-serif;font-size:10px;font-weight:950;letter-spacing:.18em;text-transform:uppercase;margin-top:6px}
+    .links{display:flex;align-items:center;gap:21px;color:rgba(255,255,255,.82);font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.08em}
+    .links a:hover{color:var(--brass2)}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;
+      padding:14px 23px;font-weight:950;color:white!important;
+      background:linear-gradient(135deg,var(--red),var(--brass));
+      border:1px solid rgba(255,255,255,.28);box-shadow:0 18px 42px rgba(166,66,56,.25);
+      transition:.24s ease;white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-3px);box-shadow:0 26px 58px rgba(166,66,56,.35)}
+    .btn.navy{background:var(--navy);box-shadow:0 18px 42px rgba(16,42,67,.25)}
+    .btn.ghost{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.38);box-shadow:none;color:white!important}
+
+    .hero{
+      position:relative;overflow:hidden;color:white;min-height:870px;
+      background:
+        radial-gradient(circle at 15% 20%,rgba(221,180,108,.15),transparent 28%),
+        linear-gradient(90deg,rgba(7,24,39,.96),rgba(16,42,67,.84) 46%,rgba(7,24,39,.25)),
+        url('images/kitchen-lighting.jpeg') center/cover no-repeat fixed;
+    }
+    .hero:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:160px;background:linear-gradient(180deg,transparent,var(--paper));z-index:1}
+    .hero-logo-watermark{position:absolute;right:-80px;top:84px;width:580px;opacity:.08;filter:grayscale(1);z-index:1}
+    .hero-inner{
+      position:relative;z-index:3;max-width:1260px;margin:auto;padding:98px 22px 168px;
+      display:grid;grid-template-columns:.95fr 1.05fr;gap:50px;align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;padding:9px 15px;border-radius:999px;
+      color:var(--brass2);background:rgba(221,180,108,.13);border:1px solid rgba(221,180,108,.36);
+      font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.14em;margin-bottom:24px;
+    }
+    .hero h1{
+      margin:0 0 24px;font-family:Cinzel,serif;font-weight:900;letter-spacing:-.065em;
+      font-size:clamp(50px,7vw,108px);line-height:.86;text-transform:uppercase;text-shadow:0 14px 38px rgba(0,0,0,.44);
+    }
+    .hero h1 span{
+      display:block;color:var(--brass2);font-family:'Libre Baskerville',serif;
+      text-transform:none;font-size:.58em;letter-spacing:-.045em;margin-top:.12em;
+    }
+    .hero p{color:rgba(255,255,255,.86);font-size:clamp(18px,2vw,23px);font-weight:700;max-width:720px;margin:0 0 30px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+    .proof{display:flex;flex-wrap:wrap;gap:10px}
+    .proof div{color:white;font-size:13px;font-weight:950;padding:10px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.10)}
+
+    .hero-board{position:relative;min-height:610px}
+    .glass-logo{
+      position:absolute;right:34px;top:0;width:315px;padding:20px;border-radius:36px;
+      background:rgba(255,255,255,.88);backdrop-filter:blur(12px);box-shadow:var(--shadow);transform:rotate(2deg);z-index:5;
+    }
+    .glass-logo img{border-radius:24px}
+    .project-float{position:absolute;overflow:hidden;border-radius:34px;border:1px solid rgba(255,255,255,.20);box-shadow:var(--shadow);background:#111}
+    .project-float img{width:100%;height:100%;object-fit:cover}
+    .project-float.a{left:0;bottom:42px;width:58%;height:330px;transform:rotate(-3deg)}
+    .project-float.b{right:0;bottom:0;width:53%;height:285px;transform:rotate(4deg)}
+    .badge-seal{
+      position:absolute;left:34px;top:78px;width:154px;height:154px;border-radius:50%;
+      background:linear-gradient(135deg,var(--brass2),var(--brass));color:var(--navy2);
+      display:grid;place-items:center;text-align:center;box-shadow:0 24px 55px rgba(0,0,0,.34);
+      border:8px solid rgba(255,255,255,.20);font-weight:950;z-index:6;
+    }
+    .badge-seal strong{display:block;font-family:Cinzel,serif;font-size:48px;line-height:.85}
+
+    .section{position:relative;background:var(--paper);padding:96px 22px}
+    .container{max-width:1260px;margin:auto}
+    .title{max-width:920px;margin:0 auto 54px;text-align:center}
+    .small-title{color:var(--red);font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.16em;margin-bottom:13px}
+    .title h2{
+      font-family:Cinzel,serif;color:var(--navy2);font-size:clamp(36px,5vw,72px);
+      line-height:.92;letter-spacing:-.058em;text-transform:uppercase;margin:0 0 18px;
+    }
+    .title h2 span{color:var(--brass)}
+    .title p{color:var(--muted);font-size:18px;font-weight:650;margin:0}
+
+    .trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line-dark);border-radius:36px;overflow:hidden;background:white;box-shadow:0 24px 70px rgba(16,42,67,.12)}
+    .trust-item{padding:34px 28px;border-right:1px solid var(--line-dark);transition:.24s ease}
+    .trust-item:hover{background:#fffdf8;transform:translateY(-3px)}
+    .trust-item:last-child{border-right:0}
+    .trust-item .num{font-family:Cinzel,serif;color:var(--brass);font-size:34px;font-weight:900;line-height:1;margin-bottom:18px;letter-spacing:-.07em}
+    .trust-item h3{margin:0 0 9px;color:var(--navy2);font-size:22px}
+    .trust-item p{margin:0;color:var(--muted);font-weight:650}
+
+    .blocks-section{
+      background:
+        radial-gradient(circle at 20% 10%,rgba(221,180,108,.16),transparent 25%),
+        linear-gradient(180deg,var(--navy2),#0b2136);
+      color:white;
+    }
+    .blocks-section .title h2{color:white}
+    .blocks-section .title p{color:rgba(255,255,255,.74)}
+    .blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .block{
+      position:relative;overflow:hidden;min-height:342px;border-radius:34px;padding:30px;
+      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);
+      box-shadow:0 24px 70px rgba(0,0,0,.18);transition:.24s ease;
+    }
+    .block:hover{transform:translateY(-5px);background:rgba(255,255,255,.11)}
+    .block:before{content:"";position:absolute;inset:0 0 auto 0;height:8px;background:linear-gradient(90deg,var(--brass2),var(--brass))}
+    .block.popular{background:rgba(255,255,255,.14);box-shadow:0 34px 90px rgba(0,0,0,.28)}
+    .tag{display:inline-block;background:linear-gradient(135deg,var(--brass2),var(--brass));color:var(--navy2);border-radius:999px;padding:6px 11px;font-size:11px;font-weight:950;margin-bottom:16px}
+    .hours{font-family:Cinzel,serif;font-size:54px;line-height:.9;font-weight:900;color:white;letter-spacing:-.08em}
+    .block h3{color:white;font-size:23px;line-height:1.1;margin:16px 0 10px}
+    .block p{color:rgba(255,255,255,.75);font-weight:700;margin:0 0 16px}
+    .block ul{margin:0;padding-left:18px;color:rgba(255,255,255,.82);font-size:14px;font-weight:800}
+    .block-note{max-width:900px;margin:28px auto 0;text-align:center;color:rgba(255,255,255,.70);font-weight:700}
+
+    .split{display:grid;grid-template-columns:.92fr 1.08fr;gap:54px;align-items:center}
+    .split-img{position:relative;border-radius:42px;overflow:hidden;box-shadow:0 28px 80px rgba(16,42,67,.20);border:10px solid white;min-height:540px}
+    .split-img img{width:100%;height:100%;min-height:540px;object-fit:cover}
+    .split-copy h2{font-family:Cinzel,serif;color:var(--navy2);font-size:clamp(36px,5vw,66px);line-height:.94;letter-spacing:-.058em;text-transform:uppercase;margin:0 0 20px}
+    .split-copy h2 span{color:var(--red)}
+    .split-copy p{color:#526070;font-size:18px;font-weight:650;margin:0 0 16px}
+    .project-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+    .project-list div{background:white;border:1px solid var(--line-dark);border-radius:16px;padding:13px 14px;font-weight:900;color:var(--navy);box-shadow:0 10px 24px rgba(16,42,67,.05)}
+
+    .photo-band{
+      position:relative;overflow:hidden;color:white;padding:118px 22px;
+      background:linear-gradient(rgba(7,24,39,.78),rgba(7,24,39,.88)),url('images/ceiling-fan-before-after.jpeg') center/cover no-repeat fixed;
+    }
+    .photo-band-inner{max-width:850px;margin:auto;text-align:center;position:relative;z-index:2}
+    .photo-band h2{font-family:Cinzel,serif;font-size:clamp(40px,6vw,82px);line-height:.9;letter-spacing:-.06em;text-transform:uppercase;margin:0 0 18px}
+    .photo-band p{font-size:20px;color:rgba(255,255,255,.84);font-weight:750;margin:0 auto 28px}
+
+    .services{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .service{background:white;border:1px solid var(--line-dark);border-radius:28px;padding:25px 20px;box-shadow:0 16px 42px rgba(16,42,67,.07);min-height:180px;transition:.24s ease}
+    .service:hover{transform:translateY(-5px)}
+    .service .icon{font-size:30px;margin-bottom:16px}
+    .service h3{margin:0 0 8px;color:var(--navy2);font-size:20px}
+    .service p{margin:0;color:var(--muted);font-size:14px;font-weight:650}
+
+    .gallery{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
+    .gallery-left,.gallery-right{display:grid;gap:18px}
+    .gallery-left{grid-template-rows:560px 280px}
+    .gallery-right{grid-template-rows:280px 280px 280px}
+    .tile{position:relative;overflow:hidden;border-radius:34px;background:#ddd;border:8px solid white;box-shadow:0 24px 70px rgba(16,42,67,.16)}
+    .tile img{width:100%;height:100%;object-fit:cover;transition:.42s ease}
+    .tile:hover img{transform:scale(1.055)}
+    .tile:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(16,42,67,.78))}
+    .tile span{position:absolute;z-index:2;left:22px;right:22px;bottom:20px;color:white;font-size:20px;font-weight:950}
+
+    .reviews{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:stretch}
+    .review-big{background:linear-gradient(180deg,var(--navy),var(--navy2));color:white;border-radius:38px;padding:38px;box-shadow:0 28px 80px rgba(16,42,67,.20);display:flex;flex-direction:column;justify-content:space-between;min-height:420px}
+    .review-big .stars{color:#f7b500;font-size:24px;letter-spacing:2px}
+    .review-big p{font-family:'Libre Baskerville',serif;font-size:25px;line-height:1.45;margin:26px 0;color:white}
+    .review-big strong{color:var(--brass2)}
+    .review-stack{display:grid;gap:16px}
+    .review-card{background:white;border:1px solid var(--line-dark);border-radius:28px;padding:24px;box-shadow:0 14px 34px rgba(16,42,67,.07)}
+    .review-card .stars{color:#f7b500;letter-spacing:2px;margin-bottom:8px}
+    .review-card p{margin:0 0 12px;color:#526070;font-weight:700}
+    .review-card strong{color:var(--navy2)}
+
+    .areas{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .area{background:white;border:1px solid var(--line-dark);border-radius:28px;padding:26px;box-shadow:0 14px 34px rgba(16,42,67,.06)}
+    .area h3{margin:0 0 8px;color:var(--navy2);font-size:24px}
+    .area p{margin:0;color:var(--muted);font-weight:650;font-size:15px}
+
+    .cta{position:relative;overflow:hidden;color:white;text-align:center;padding:120px 22px;background:linear-gradient(rgba(7,24,39,.78),rgba(7,24,39,.90)),url('images/front-door-before-after.jpeg') center/cover no-repeat fixed}
+    .cta h2{font-family:Cinzel,serif;font-size:clamp(40px,6vw,82px);line-height:.9;letter-spacing:-.06em;text-transform:uppercase;margin:0 0 18px}
+    .cta p{max-width:780px;margin:0 auto 30px;color:rgba(255,255,255,.84);font-size:19px;font-weight:750}
+    footer{background:var(--navy2);color:white;padding:42px 22px;border-top:5px solid var(--brass)}
+    .footer-inner{max-width:1260px;margin:auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    footer p{color:rgba(255,255,255,.72);margin:8px 0 0} footer a{color:var(--brass2)}
+    .mobile-sticky{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:100;gap:10px}.mobile-sticky a{flex:1;text-align:center}
+
+    @media(max-width:1080px){
+      .links{display:none}
+      .hero-inner,.split,.gallery,.reviews{grid-template-columns:1fr}
+      .hero-board{min-height:560px}
+      .trust-row,.blocks,.services,.areas{grid-template-columns:repeat(2,1fr)}
+      .trust-item{border-right:0;border-bottom:1px solid var(--line-dark)}
+      .gallery-left,.gallery-right{grid-template-rows:380px 260px}
+      .mobile-sticky{display:flex} body{padding-bottom:82px}
+    }
+    @media(max-width:680px){
+      .topbar{font-size:12px}.brand{font-size:15px}.brand img{width:50px;height:50px}
+      .hero{min-height:auto;background-attachment:scroll}.hero-inner{padding:72px 18px 126px}
+      .hero-board,.hero-logo-watermark{display:none}
+      .section{padding:74px 18px}
+      .trust-row,.blocks,.services,.areas,.project-list{grid-template-columns:1fr}
+      .gallery-left,.gallery-right{grid-template-rows:auto}.tile{height:300px}
+      .photo-band,.cta{background-attachment:scroll}
+      .review-big p{font-size:21px}
+    }
+  
+/* Complete Package Enhancements */
+a, .btn, .card, .service, .tile, .trust-item { transition: all .24s ease; }
+.card:hover, .service:hover, .trust-item:hover { transform: translateY(-4px); }
+.tile:hover img { transform: scale(1.055); }
+.mobile-sticky-complete{position:fixed;left:12px;right:12px;bottom:12px;z-index:999;display:none;gap:10px}
+.mobile-sticky-complete a{flex:1;text-align:center}
+@media(max-width:850px){.mobile-sticky-complete{display:flex}body{padding-bottom:82px}}
+
+</style>
+</head>
+
+<body>
+  <div class="topbar">★★★★★ <span>28 Five-Star Reviews</span> • Insured • Owner Operated • Madison / Gluckstadt / Canton / Ridgeland • <a href="tel:6623361743">662-336-1743</a></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#">
+        <img src="images/logo.jpeg" alt="Assembly Required logo">
+        <div>Assembly Required<small>Home Repair & Project Services</small></div>
+      </a>
+      <div class="links">
+        <a href="#why">Why Us</a>
+        <a href="#blocks">Hour Blocks</a>
+        <a href="#work">Work</a>
+        <a href="#reviews">Reviews</a>
+        <a class="btn" href="#book">Request an Estimate</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero grain">
+    <img class="hero-logo-watermark" src="images/logo.jpeg" alt="">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Premium handyman help for busy homeowners</div>
+        <h1>Your Project List, <span>Handled.</span></h1>
+        <p>Reliable home repair, installations, assembly, pressure washing, and punch-list help for Madison-area homeowners who want it done without the hassle.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#book">Request an Estimate</a>
+          <a class="btn ghost" href="#work">View Our Work</a>
+        </div>
+        <div class="proof">
+          <div>★★★★★ 28 Five-Star Reviews</div>
+          <div>✅ Insured</div>
+          <div>🏆 Owner Operated</div>
+          <div>📍 Madison Area</div>
+        </div>
+      </div>
+
+      <div class="hero-board">
+        <div class="badge-seal"><div><strong>28</strong>FIVE-STAR<br>REVIEWS</div></div>
+        <div class="glass-logo"><img src="images/logo.jpeg" alt="Assembly Required logo"></div>
+        <div class="project-float a"><img src="images/hero-playset.jpeg" alt="Playset assembly"></div>
+        <div class="project-float b"><img src="images/driveway-pressure-wash.jpeg" alt="Driveway pressure washing"></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="why" class="section">
+    <div class="container">
+      <div class="title">
+        <div class="small-title">Why homeowners choose Assembly Required</div>
+        <h2>Reliable Help <span>Without the Hassle</span></h2>
+        <p>For busy homeowners, the job is not just the repair. It is scheduling, communication, cleanup, and knowing the work was handled right.</p>
+      </div>
+
+      <div class="trust-row">
+        <div class="trust-item"><div class="num">01</div><h3>We Show Up</h3><p>Clear scheduling and dependable communication from start to finish.</p></div>
+        <div class="trust-item"><div class="num">02</div><h3>We Communicate</h3><p>Text-friendly updates, realistic expectations, and no guessing games.</p></div>
+        <div class="trust-item"><div class="num">03</div><h3>We Respect Your Home</h3><p>Clean, careful, professional work inside and outside your home.</p></div>
+        <div class="trust-item"><div class="num">04</div><h3>We Do It Right</h3><p>Quality workmanship on repairs, installs, assemblies, and project lists.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blocks" class="section blocks-section grain">
+    <div class="container">
+      <div class="title">
+        <div class="small-title" style="color:var(--brass2);">Simple booking structure</div>
+        <h2>Choose the Right <span>Hour Block</span></h2>
+        <p>Service blocks make it easier to schedule the right amount of help for your home repair list without turning every small job into a drawn-out estimate process.</p>
+      </div>
+
+      <div class="blocks">
+        <div class="block"><div class="hours">2 Hr</div><h3>Quick Fix Block</h3><p>Small repairs, simple installs, and short punch lists.</p><ul><li>Hanging items</li><li>Small repairs</li><li>Simple installs</li><li>Quick punch lists</li></ul></div>
+        <div class="block popular"><div class="tag">MOST POPULAR</div><div class="hours">4 Hr</div><h3>Half-Day Block</h3><p>Best for multiple small-to-medium projects around the home.</p><ul><li>TV mounting</li><li>Fixture installs</li><li>Light carpentry</li><li>Multiple repairs</li></ul></div>
+        <div class="block"><div class="hours">6 Hr</div><h3>Project Block</h3><p>Great for larger repair lists, assemblies, and multi-room help.</p><ul><li>Larger punch lists</li><li>Assembly work</li><li>Exterior tasks</li><li>Multi-room projects</li></ul></div>
+        <div class="block"><div class="hours">8 Hr</div><h3>Full-Day Block</h3><p>Best for major home to-do lists and bigger project days.</p><ul><li>Seller prep</li><li>Major punch lists</li><li>Large assemblies</li><li>Full-day support</li></ul></div>
+      </div>
+
+      <p class="block-note">Projects are scheduled in service blocks for efficiency. Final pricing depends on scope, materials, travel, and project complexity.</p>
+    </div>
+  </section>
+
+  <section class="section blueprint" style="background:var(--cream);">
+    <div class="container split">
+      <div class="split-img"><img src="images/kitchen-lighting.jpeg" alt="Under cabinet lighting installation"></div>
+      <div class="split-copy">
+        <div class="small-title">Projects homeowners keep putting off</div>
+        <h2>Small Projects Can Make a <span>Big Difference</span></h2>
+        <p>You do not need a major remodel to make your home feel better. Sometimes it is the light that needs installed, the gate that will not close, the fan that needs replacing, or the punch list that never ends.</p>
+        <p>Assembly Required handles practical home projects with a premium level of care.</p>
+        <div class="project-list">
+          <div>TV Mounting</div><div>Drywall Repair</div><div>Ceiling Fans</div><div>Door & Trim Repair</div>
+          <div>Fence / Gate Repair</div><div>Pressure Washing</div><div>Furniture Assembly</div><div>Punch Lists</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="photo-band grain">
+    <div class="photo-band-inner">
+      <div class="small-title" style="color:var(--brass2);">Real work. Real homes.</div>
+      <h2>Not Stock Photos. Actual Projects.</h2>
+      <p>Clean repairs, practical upgrades, assemblies, maintenance, and home improvement wins from real projects.</p>
+      <a class="btn" href="#work">View Project Gallery</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="title">
+        <div class="small-title">Common project categories</div>
+        <h2>What We <span>Handle</span></h2>
+        <p>Premium handyman support for the repairs, installations, and home projects that make life easier.</p>
+      </div>
+
+      <div class="services">
+        <div class="service"><div class="icon">🛠️</div><h3>Repairs</h3><p>Drywall, doors, trim, gates, hardware, and punch-list fixes.</p></div>
+        <div class="service"><div class="icon">📺</div><h3>Installations</h3><p>TVs, fans, lights, fixtures, shelves, smart home items, and more.</p></div>
+        <div class="service"><div class="icon">🪚</div><h3>Carpentry</h3><p>Small builds, shelving, cedar projects, porch swings, and wood repairs.</p></div>
+        <div class="service"><div class="icon">🏡</div><h3>Exterior</h3><p>Pressure washing, fence repair, gate adjustment, and exterior maintenance.</p></div>
+        <div class="service"><div class="icon">📦</div><h3>Assembly</h3><p>Playsets, furniture, storage, sheds, and household assembly projects.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="section" style="background:var(--cream);">
+    <div class="container">
+      <div class="title">
+        <div class="small-title">Project proof</div>
+        <h2>Work That Speaks <span>for Itself</span></h2>
+        <p>A clean project gallery builds trust faster than a page full of promises.</p>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-left">
+          <div class="tile"><img src="images/ceiling-fan-before-after.jpeg" alt="Ceiling fan and wood ceiling before and after"><span>Ceiling Fan & Wood Ceiling Upgrade</span></div>
+          <div class="tile"><img src="images/driveway-pressure-wash.jpeg" alt="Driveway pressure washing before and after"><span>Driveway Pressure Washing</span></div>
+        </div>
+        <div class="gallery-right">
+          <div class="tile"><img src="images/porch-deck-build.jpeg" alt="Porch deck build"><span>Swing Installation</span></div>
+          <div class="tile"><img src="images/pet-door-before-after.jpeg" alt="Pet door installation before and after"><span>Pet Door Installation</span></div>
+          <div class="tile"><img src="images/front-door-before-after.jpeg" alt="Front door refresh before and after"><span>Front Door Refresh</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="section">
+    <div class="container">
+      <div class="title">
+        <div class="small-title">Trusted by local homeowners</div>
+        <h2>28 Five-Star Reviews <span>and Counting</span></h2>
+        <p>Customers mention the things that matter most: communication, quality, timeliness, and trust.</p>
+      </div>
+
+      <div class="reviews">
+        <div class="review-big">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p>“Prompt, professional and reasonably priced. I have already referred Taylor to neighbors and will absolutely use him again for my own projects.”</p>
+          </div>
+          <strong>Wendy Mullins</strong>
+        </div>
+        <div class="review-stack">
+          <div class="review-card"><div class="stars">★★★★★</div><p>“Taylor has done several projects at my house. His prices are very competitive. He was on time and completed the projects in a timely manner.”</p><strong>John McNamara</strong></div>
+          <div class="review-card"><div class="stars">★★★★★</div><p>“Not only is Taylor very professional and punctual, he does excellent work of very high quality. I highly recommend him.”</p><strong>slp2007</strong></div>
+          <div class="review-card"><div class="stars">★★★★★</div><p>“Awesome guy doing awesome work. He did great work on one of my rental homes. He’s earned my business from here on out.”</p><strong>Wynn Suebhongsang</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section blueprint" style="background:var(--cream);">
+    <div class="container">
+      <div class="title">
+        <div class="small-title">Where we work</div>
+        <h2>Proudly Serving <span>Central Mississippi</span></h2>
+        <p>Local home repair and project services for homeowners across Madison County and nearby areas.</p>
+      </div>
+      <div class="areas">
+        <div class="area"><h3>Madison, MS</h3><p>Home repair, TV mounting, drywall repair, pressure washing, carpentry, and punch-list help.</p></div>
+        <div class="area"><h3>Gluckstadt, MS</h3><p>Premium repairs, installations, assembly, fence repair, and project services.</p></div>
+        <div class="area"><h3>Canton, MS</h3><p>Reliable handyman support, maintenance, repairs, and project work.</p></div>
+        <div class="area"><h3>Ridgeland, MS</h3><p>Installations, repairs, painting touch-ups, mounting, and household projects.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="cta grain">
+    <h2>Ready to Get That Project Off Your List?</h2>
+    <p>Call, text, or request an estimate online. Send photos of the project and we’ll help you choose the right next step.</p>
+    <div class="hero-actions" style="justify-content:center;margin-bottom:0;">
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSc-4No1BCXH5YDLNwCu5CAG7RaXPayvyAxyN9RX2T0ZQ1LsQA/viewform?usp=preview">Request a Free Estimate</a>
+      <a class="btn ghost" href="tel:6623361743">Call/Text 662-336-1743</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <strong>Assembly Required Handyman Services LLC</strong>
+        <p>Premium home repair and project services in Madison, Gluckstadt, Canton, Ridgeland, Brandon, and Flowood, MS.</p>
+      </div>
+      <div>
+        <p><strong>Phone:</strong> <a href="tel:6623361743">662-336-1743</a></p>
+        <p><strong>Email:</strong> <a href="mailto:service@assemblyrequiredms.com">service@assemblyrequiredms.com</a></p>
+        <p><strong>Website:</strong> assemblyrequiredms.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-sticky">
+    <a class="btn navy" href="tel:6623361743">Call/Text</a>
+    <a class="btn" href="#book">Request an Estimate</a>
+  </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Assembly Required Handyman Services LLC",
+  "url": "https://assemblyrequiredms.com",
+  "telephone": "+16623361743",
+  "email": "service@assemblyrequiredms.com",
+  "description": "Premium handyman services, home repair, project help, custom woodworking, outdoor living and installation services in Madison, Gluckstadt, Canton and Ridgeland, Mississippi.",
+  "areaServed": ["Madison MS", "Gluckstadt MS", "Canton MS", "Ridgeland MS", "Brandon MS", "Flowood MS"],
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "28"
+  }
+}
+</script>
+
+</body>
+</html>
