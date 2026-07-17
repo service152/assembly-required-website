@@ -1,0 +1,16 @@
+ASSEMBLY REQUIRED WEBSITE UPDATE
+
+1. Back up your current GitHub repository.
+2. Upload all files in this package to the root of your repository.
+3. Allow matching filenames to replace the existing versions.
+4. Keep your existing images folder.
+5. Commit the changes and wait for GitHub Pages to redeploy.
+
+All estimate buttons in this package point to your Google Form:
+https://docs.google.com/forms/d/e/1FAIpQLSc-4No1BCXH5YDLNwCu5CAG7RaXPayvyAxyN9RX2T0ZQ1LsQA/viewform?usp=preview
+
+The four existing location pages are retained:
+- handyman-madison-ms.html
+- handyman-canton-ms.html
+- handyman-gluckstadt-ms.html
+- handyman-ridgeland-ms.html

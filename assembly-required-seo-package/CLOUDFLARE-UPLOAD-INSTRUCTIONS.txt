@@ -1,0 +1,23 @@
+Cloudflare Pages Upload Instructions
+
+1. Unzip assembly-required-cloudflare-ready.zip.
+2. Open the unzipped folder.
+3. Drag the CONTENTS of this folder into Cloudflare Pages Upload Assets.
+
+The files you drag should include:
+- index.html
+- about.html
+- services.html
+- contact.html
+- images folder
+- sitemap.xml
+- robots.txt
+
+Important:
+Cloudflare needs index.html at the top level.
+
+After upload:
+Open the temporary pages.dev link and test the site.
+
+Before final domain launch:
+Replace all REPLACE-WITH-MARKATE-LINK buttons with your actual Markate booking link.
