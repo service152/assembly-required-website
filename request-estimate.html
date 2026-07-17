@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Request an Estimate | Assembly Required Handyman Services</title>
+<meta name="description" content="Request an estimate from Assembly Required Handyman Services in Madison, Gluckstadt, Canton, Ridgeland, Brandon, and Flowood, Mississippi."/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Libre+Baskerville:wght@700&display=swap');
+:root{--navy:#102a43;--navy2:#071827;--red:#a64238;--brass:#b98542;--brass2:#ddb46c;--cream:#f6efe2;--paper:#fffaf3;--white:#fff;--ink:#111827;--muted:#667085;--line:rgba(16,42,67,.14);--shadow:0 28px 80px rgba(7,24,39,.18)}
+*{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.55}
+a{text-decoration:none;color:inherit} img{display:block;max-width:100%}
+.topbar{background:var(--navy2);color:white;text-align:center;padding:10px 18px;font-size:13px;font-weight:900;border-bottom:3px solid var(--brass)}
+.topbar span,.topbar a{color:var(--brass2)} .nav{position:sticky;top:0;z-index:80;background:rgba(255,250,243,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1200px;margin:auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:22px}
+.brand{display:flex;align-items:center;gap:14px;color:var(--navy);font-family:Cinzel,serif;font-weight:900;letter-spacing:-.04em;line-height:1}
+.brand img{width:58px;height:58px;object-fit:contain;border-radius:50%;background:white;padding:5px;box-shadow:0 10px 26px rgba(16,42,67,.12)}
+.brand small{display:block;color:var(--red);font-family:Inter;font-size:9px;font-weight:950;letter-spacing:.18em;text-transform:uppercase;margin-top:6px}
+.links{display:flex;gap:20px;font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.08em;color:var(--navy)}
+.btn{border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:15px 24px;font:inherit;font-weight:950;color:white;background:linear-gradient(135deg,var(--red),var(--brass));box-shadow:0 16px 34px rgba(166,66,56,.24)}
+.hero{color:white;text-align:center;padding:74px 22px 115px;background:linear-gradient(120deg,rgba(7,24,39,.97),rgba(16,42,67,.89))}
+.hero-inner{max-width:900px;margin:auto} .eyebrow{display:inline-flex;padding:9px 15px;border-radius:999px;color:var(--brass2);background:rgba(221,180,108,.13);border:1px solid rgba(221,180,108,.36);font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.14em;margin-bottom:22px}
+.hero h1{font-family:Cinzel,serif;font-size:clamp(40px,7vw,78px);line-height:.92;letter-spacing:-.06em;text-transform:uppercase;margin:0 0 18px}
+.hero h1 span{display:block;color:var(--brass2);font-family:'Libre Baskerville',serif;text-transform:none;font-size:.57em;letter-spacing:-.04em;margin-top:.12em}
+.hero p{max-width:720px;margin:0 auto;color:rgba(255,255,255,.82);font-size:18px;font-weight:650}
+.wrap{max-width:1050px;margin:-72px auto 80px;padding:0 20px;position:relative} .form-card{background:white;border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow);overflow:hidden}
+.form-head{padding:30px 32px;background:var(--cream);border-bottom:1px solid var(--line)} .form-head h2{margin:0 0 6px;color:var(--navy2);font-family:Cinzel,serif;font-size:30px;letter-spacing:-.04em;text-transform:uppercase}
+.form-head p{margin:0;color:var(--muted);font-weight:650} form{padding:32px} .section-title{grid-column:1/-1;margin:7px 0 -2px;color:var(--red);font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.14em}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px} .field{display:grid;gap:8px} .field.full{grid-column:1/-1}
+label{font-weight:850;color:var(--navy2);font-size:14px} input,select,textarea{width:100%;border:1px solid rgba(16,42,67,.22);background:#fffdf9;color:var(--ink);border-radius:14px;padding:14px 15px;font:inherit;outline:none;transition:.2s}
+input:focus,select:focus,textarea:focus{border-color:var(--brass);box-shadow:0 0 0 4px rgba(185,133,66,.13)} textarea{min-height:150px;resize:vertical}
+.filebox{border:2px dashed rgba(16,42,67,.24);border-radius:16px;padding:18px;background:#fffdf9}
+.filebox input{border:0;background:transparent;padding:0} .file-help{font-size:13px;color:var(--muted);font-weight:650;margin-top:8px}
+.preview-list{display:grid;gap:8px;margin-top:10px} .preview-item{font-size:13px;color:var(--navy);font-weight:750}
+.note{grid-column:1/-1;padding:15px 16px;border-radius:14px;background:var(--cream);color:var(--muted);font-size:13px;font-weight:650}
+.actions{grid-column:1/-1;display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:4px} .actions .btn{min-width:240px}
+.status{font-weight:800;color:var(--navy)} .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.trust div{background:white;border:1px solid var(--line);border-radius:18px;padding:17px;text-align:center;font-weight:900;color:var(--navy)}
+footer{background:var(--navy2);color:white;padding:38px 22px;border-top:5px solid var(--brass)} .footer-inner{max-width:1120px;margin:auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer p{color:rgba(255,255,255,.72);margin:8px 0 0} footer a{color:var(--brass2)} .mobile-sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:999;display:none;gap:10px}
+.mobile-sticky a{flex:1;text-align:center} .honeypot{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+@media(max-width:850px){.links{display:none}.grid,.trust{grid-template-columns:1fr}.hero{padding:58px 18px 100px}.wrap{padding:0 13px;margin-top:-60px}form,.form-head{padding:23px 19px}.mobile-sticky{display:flex}body{padding-bottom:82px}}
+</style>
+</head>
+<body>
+<div class="topbar">★★★★★ <span>28 Five-Star Reviews</span> • Insured • Owner Operated • <a href="tel:6623361743">662-336-1743</a></div>
+<nav class="nav"><div class="nav-inner"><a class="brand" href="index.html"><img alt="Assembly Required logo" src="images/logo.jpeg"/><div>Assembly Required<small>Home Repair &amp; Project Services</small></div></a><div class="links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a class="btn" href="#estimate-form">Request an Estimate</a></div></div></nav>
+<header class="hero"><div class="hero-inner"><div class="eyebrow">Tell Us About Your Project</div><h1>Request an Estimate <span>We’ll Take It From Here</span></h1><p>Complete the form below and upload photos when possible. We’ll review your request and contact you within one business day.</p></div></header>
+<main class="wrap">
+<section class="form-card" id="estimate-form">
+<div class="form-head"><h2>Project Information</h2><p>Fields marked with an asterisk are required.</p></div>
+<form id="leadForm"><div class="grid">
+<div class="section-title">Contact information</div>
+<div class="field"><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" required/></div>
+<div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required/></div>
+<div class="field full"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required/></div>
+<div class="section-title">Service location</div>
+<div class="field"><label for="address">Street address *</label><input id="address" name="address" autocomplete="street-address" required/></div>
+<div class="field"><label for="city">City *</label><select id="city" name="city" required><option value="">Select a city</option><option>Madison</option><option>Gluckstadt</option><option>Canton</option><option>Ridgeland</option><option>Brandon</option><option>Flowood</option><option>Other nearby area</option></select></div>
+<div class="section-title">Project details</div>
+<div class="field full"><label for="service">What type of service do you need? *</label><select id="service" name="service" required><option value="">Choose a service</option>
+            <option>General handyman / project list</option>
+            <option>Furniture assembly</option>
+            <option>Playset assembly</option>
+            <option>TV mounting</option>
+            <option>Picture, mirror, shelf, or curtain hanging</option>
+            <option>Drywall repair</option>
+            <option>Drywall finishing or texture repair</option>
+            <option>Interior painting</option>
+            <option>Exterior painting</option>
+            <option>Trim, molding, or baseboard repair</option>
+            <option>Door repair or installation</option>
+            <option>Pocket door or barn door installation</option>
+            <option>Window, screen, or shutter repair</option>
+            <option>Carpentry or wood rot repair</option>
+            <option>Deck or porch repair</option>
+            <option>Screened porch repair or enclosure</option>
+            <option>Fence or gate repair</option>
+            <option>Ceiling fan installation</option>
+            <option>Light fixture replacement</option>
+            <option>Minor electrical repair</option>
+            <option>Faucet, toilet, or minor plumbing repair</option>
+            <option>Garbage disposal installation or repair</option>
+            <option>Caulking or weatherproofing</option>
+            <option>Pressure washing</option>
+            <option>Gutter cleaning</option>
+            <option>Garage organization or shelving</option>
+            <option>Cabinet or drawer repair</option>
+            <option>Appliance installation</option>
+            <option>Grab bar installation</option>
+            <option>Wheelchair ramp assembly or installation</option>
+            <option>Custom woodworking</option>
+            <option>Other project</option>
+          </select></div>
+<div class="field full"><label for="description">Tell us about the project *</label><textarea id="description" name="description" placeholder="What needs to be done? Include measurements, materials you already have, damage you have noticed, and any other helpful details." required></textarea></div>
+<div class="field full"><label for="photos">Upload project photos</label><div class="filebox"><input id="photos" type="file" accept="image/jpeg,image/png,image/webp" multiple/><div class="file-help">Up to 5 photos. Maximum 5 MB per photo.</div><div class="preview-list" id="previewList"></div></div></div>
+<div class="section-title">Preferred timing</div>
+<div class="field"><label for="preferredDay">Preferred day</label><input id="preferredDay" name="preferredDay" type="date"/></div>
+<div class="field"><label for="preferredTime">Preferred time</label><select id="preferredTime" name="preferredTime"><option value="">No preference</option><option>Morning</option><option>Afternoon</option></select></div>
+<div class="honeypot"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"/></div>
+<div class="note">Uploading clear photos helps us understand the work and may allow us to price some projects without an initial visit.</div>
+<div class="actions"><button class="btn" id="submitButton" type="submit">Send My Estimate Request</button><div class="status" id="status" role="status" aria-live="polite"></div></div>
+</div></form>
+</section>
+<div class="trust"><div>★★★★★ 28 Five-Star Reviews</div><div>✓ Insured &amp; Owner Operated</div><div>✓ Local Madison-Area Service</div></div>
+</main>
+<footer><div class="footer-inner"><div><strong>Assembly Required Handyman Services LLC</strong><p>Premium home repair and project services in Madison, Gluckstadt, Canton, Ridgeland, Brandon, and Flowood, MS.</p></div><div><p><strong>Phone:</strong> <a href="tel:6623361743">662-336-1743</a></p><p><strong>Email:</strong> <a href="mailto:service@assemblyrequiredms.com">service@assemblyrequiredms.com</a></p><p><strong>Website:</strong> assemblyrequiredms.com</p></div></div></footer>
+<div class="mobile-sticky"><a class="btn" href="tel:6623361743">Call</a><a class="btn" href="#estimate-form">Estimate</a></div>
+<script>
+const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxeoKTSO6QROr1BBIMyKM2GeXuq7SfZUHVhz8wSqrqSpm7xS1czwot-5HpBizI-Wxkr/exec';
+const MAX_FILES = 5;
+const MAX_FILE_SIZE = 5 * 1024 * 1024;
+const form = document.getElementById('leadForm');
+const photosInput = document.getElementById('photos');
+const previewList = document.getElementById('previewList');
+const button = document.getElementById('submitButton');
+const statusBox = document.getElementById('status');
+
+photosInput.addEventListener('change', () => {
+  previewList.innerHTML = '';
+  [...photosInput.files].slice(0, MAX_FILES).forEach(file => {
+    const item = document.createElement('div');
+    item.className = 'preview-item';
+    item.textContent = '✓ ' + file.name;
+    previewList.appendChild(item);
+  });
+});
+
+function fileToData(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve({
+      name: file.name,
+      type: file.type,
+      data: String(reader.result).split(',')[1]
+    });
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+form.addEventListener('submit', async event => {
+  event.preventDefault();
+  if (document.getElementById('website').value) return;
+
+  const files = [...photosInput.files];
+  if (files.length > MAX_FILES) {
+    statusBox.textContent = 'Please upload no more than 5 photos.';
+    return;
+  }
+  if (files.some(file => file.size > MAX_FILE_SIZE)) {
+    statusBox.textContent = 'Each photo must be 5 MB or smaller.';
+    return;
+  }
+
+  button.disabled = true;
+  button.textContent = files.length ? 'Uploading photos...' : 'Sending...';
+  statusBox.textContent = '';
+
+  try {
+    const data = Object.fromEntries(new FormData(form).entries());
+    delete data.website;
+    data.photos = await Promise.all(files.map(fileToData));
+
+    await fetch(WEB_APP_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'text/plain;charset=utf-8'},
+      body: JSON.stringify(data)
+    });
+
+    form.reset();
+    previewList.innerHTML = '';
+    statusBox.innerHTML = '✓ Thank you. Your request and photos were sent successfully. We’ll be in touch within one business day.';
+    button.textContent = 'Request Sent';
+  } catch (error) {
+    statusBox.textContent = 'We could not send the form. Please call or text 662-336-1743.';
+    button.disabled = false;
+    button.textContent = 'Try Again';
+  }
+});
+</script>
+</body></html>
