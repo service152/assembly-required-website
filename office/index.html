@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ARHS Office v3</title><link rel="stylesheet" href="styles.css"><link rel="manifest" href="manifest.webmanifest"></head><body>
+<header><h1>ARHS Office</h1><p>Leads, jobs, estimates, invoices, photos, payments, and reviews</p></header>
+<div class="wrap">
+<div class="tabs">
+<button class="active" data-tab="dashboard">Dashboard</button><button data-tab="leads">Leads</button><button data-tab="jobs">Jobs</button><button data-tab="estimates">Estimates</button><button data-tab="invoices">Invoices</button><button data-tab="photos">Photos</button>
+</div>
+<section id="dashboard"><div class="grid"><div class="card"><b>New Leads</b><h2 id="newLeads">0</h2></div><div class="card"><b>Open Estimates</b><h2 id="openEstimates">0</h2></div><div class="card"><b>Outstanding</b><h2 id="outstanding">$0</h2></div><div class="card"><b>Review Requests</b><h2 id="reviews">0</h2></div></div></section>
+<section id="leads" class="hidden"><div class="toolbar"><button class="btn" id="addLead">+ Lead</button></div><div id="leadList" class="list"></div></section>
+<section id="jobs" class="hidden"><div class="toolbar"><button class="btn" id="addJob">+ Job</button></div><div id="jobList" class="list"></div></section>
+<section id="estimates" class="hidden"><div class="toolbar"><button class="btn" id="addEstimate">+ Estimate</button></div><div id="estimateList" class="list"></div></section>
+<section id="invoices" class="hidden"><div class="toolbar"><button class="btn" id="addInvoice">+ Invoice</button></div><div id="invoiceList" class="list"></div></section>
+<section id="photos" class="hidden"><div class="card"><h3>Photo storage</h3><p>Photo upload structure is included in the database schema. The app will use Supabase Storage bucket <code>job-photos</code>.</p></div></section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="app.js"></script></body></html>
