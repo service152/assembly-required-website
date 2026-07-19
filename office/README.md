@@ -1,38 +1,22 @@
-# ARHS Office 2.0
+ARHS Office 2.0.1 Cache Fix
 
-This is the complete replacement frontend for the current prototype.
-
-## Replace these files in /office
+Replace these files in /office:
 - index.html
 - app.js
 - styles.css
-- manifest.webmanifest
-- sw.js
-- icons/icon.svg
 
-## Keep your current file
-- config.js
+Keep config.js.
 
-Your existing config.js contains the live Supabase URL and publishable key.
+This build:
+- Removes old service workers
+- Deletes old app caches
+- Forces fresh CSS and JavaScript with version tags
+- Shows "Build 2.0.1" at bottom-right
+- Shows JavaScript errors on screen
+- Includes working login and navigation buttons
+- Includes working Add Lead, Add Job, Add Estimate, and Add Invoice buttons
 
-## Features
-- Secure email magic-link login
-- Dashboard
-- Leads with search, filters, add, and edit
-- Customer cards
-- Jobs
-- Estimates
-- Estimate-to-invoice conversion
-- Invoices
-- Price book
-- Mobile navigation
-- iPhone home-screen installation
-- Supabase cloud syncing
-
-After replacing the files:
-1. Commit
-2. Push
-3. Wait for Cloudflare
-4. Refresh /office/
-5. Sign in
-6. Add a test lead
+After push:
+1. Open /office/?v=201
+2. Confirm "Build 2.0.1" appears at bottom-right
+3. If it does not, Cloudflare/GitHub is still serving old files.
