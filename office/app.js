@@ -1,14 +1,107 @@
-const cfg=window.ARHS_CONFIG||{};const configured=!cfg.SUPABASE_URL.includes("PASTE_");const sb=configured?supabase.createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY):null;
-const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(Number(n)||0);
+const cfg=window.ARHS_CONFIG||{};
+const configured=cfg.SUPABASE_URL && cfg.SUPABASE_ANON_KEY && !cfg.SUPABASE_URL.includes("PASTE_");
+const sb=configured?supabase.createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY):null;
+const money=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(Number(n)||0);
+const $=id=>document.getElementById(id);
 let state={leads:[],jobs:[],estimates:[],invoices:[]};
-document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.remove('active'));b.classList.add('active');['dashboard','leads','jobs','estimates','invoices','photos'].forEach(id=>document.getElementById(id).classList.toggle('hidden',id!==b.dataset.tab))});
-async function load(){if(!sb){alert('Add Supabase keys in config.js first.');return}for(const t of Object.keys(state)){const {data}=await sb.from(t).select('*').order('created_at',{ascending:false});state[t]=data||[]}render()}
-function render(){newLeads.textContent=state.leads.filter(x=>x.status==='New').length;openEstimates.textContent=state.estimates.filter(x=>!['Approved','Declined'].includes(x.status)).length;outstanding.textContent=money(state.invoices.reduce((a,x)=>a+Number(x.balance||0),0));reviews.textContent=state.invoices.filter(x=>x.status==='Paid'&&!x.review_requested).length;
-leadList.innerHTML=state.leads.map(x=>`<div class="row"><div><b>${x.name}</b><div>${x.service||''}</div></div><div>${x.status}</div><div>${money(x.estimated_value)}</div><button class="secondary">Open</button></div>`).join('');
-jobList.innerHTML=state.jobs.map(x=>`<div class="row"><div><b>${x.customer_name}</b><div>${x.service||''}</div></div><div>${x.job_date||''} ${x.job_time||''}</div><div>${x.status}</div><button class="secondary" onclick="downloadICS('${x.id}')">Add to Calendar</button></div>`).join('');
-estimateList.innerHTML=state.estimates.map(x=>`<div class="row"><div><b>${x.customer_name}</b><div>${x.estimate_number||''}</div></div><div>${x.status}</div><div>${money(x.amount)}</div><button class="btn" onclick="convertEstimate('${x.id}')">Convert</button></div>`).join('');
-invoiceList.innerHTML=state.invoices.map(x=>`<div class="row"><div><b>${x.customer_name}</b><div>${x.invoice_number||''}</div></div><div>${x.status}</div><div>${money(x.balance)}</div><button class="secondary" onclick="markReview('${x.id}')">${x.review_requested?'Review Sent':'Send Review'}</button></div>`).join('')}
-async function convertEstimate(id){const e=state.estimates.find(x=>x.id===id);if(!e)return;await sb.from('invoices').insert({customer_name:e.customer_name,service:e.service,amount:e.amount,balance:e.amount,status:'Draft',invoice_number:'INV-'+Date.now()});await sb.from('estimates').update({status:'Approved'}).eq('id',id);load()}
-async function markReview(id){await sb.from('invoices').update({review_requested:true}).eq('id',id);load()}
-function downloadICS(id){const j=state.jobs.find(x=>x.id===id);if(!j)return;const d=(j.job_date||'').replaceAll('-','');const ics=`BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:${d}T130000\nSUMMARY:${j.customer_name} - ${j.service||'Job'}\nDESCRIPTION:ARHS Office job\nEND:VEVENT\nEND:VCALENDAR`;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='arhs-job.ics';a.click()}
-load();
+
+document.querySelectorAll("[data-tab]").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll("[data-tab]").forEach(x=>x.classList.remove("active"));
+    btn.classList.add("active");
+    ["dashboard","leads","jobs","estimates","invoices"].forEach(id=>{
+      $(id).classList.toggle("hidden",id!==btn.dataset.tab);
+    });
+  });
+});
+
+async function showSession(session){
+  $("loginScreen").classList.toggle("hidden",!!session);
+  $("app").classList.toggle("hidden",!session);
+  if(session) await load();
+}
+
+async function boot(){
+  if(!configured){
+    $("loginMessage").textContent="Supabase is not connected. Check config.js.";
+    return;
+  }
+  const {data:{session}}=await sb.auth.getSession();
+  await showSession(session);
+  sb.auth.onAuthStateChange((_event,newSession)=>showSession(newSession));
+}
+
+$("loginForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  if(!sb)return;
+  $("loginMessage").textContent="Sending...";
+  const {error}=await sb.auth.signInWithOtp({
+    email:$("loginEmail").value.trim(),
+    options:{emailRedirectTo:location.origin+location.pathname}
+  });
+  $("loginMessage").textContent=error?error.message:"Check your email and tap the secure sign-in link.";
+});
+
+$("logoutBtn").addEventListener("click",()=>sb.auth.signOut());
+
+async function load(){
+  for(const table of Object.keys(state)){
+    const {data,error}=await sb.from(table).select("*").order("created_at",{ascending:false});
+    if(error){console.error(table,error);continue}
+    state[table]=data||[];
+  }
+  render();
+}
+
+function render(){
+  $("newLeads").textContent=state.leads.filter(x=>x.status==="New").length;
+  $("openEstimates").textContent=state.estimates.filter(x=>!["Approved","Declined"].includes(x.status)).length;
+  $("outstanding").textContent=money(state.invoices.reduce((a,x)=>a+Number(x.balance||0),0));
+  $("reviews").textContent=state.invoices.filter(x=>x.status==="Paid"&&!x.review_requested).length;
+
+  $("leadList").innerHTML=state.leads.length?state.leads.map(x=>`
+    <article class="row">
+      <div><b>${escapeHtml(x.name)}</b><div class="muted">${escapeHtml(x.service||"General Handyman")}</div></div>
+      <div>${escapeHtml(x.status||"New")}</div>
+      <strong>${money(x.estimated_value)}</strong>
+    </article>`).join(""):`<div class="card muted">No leads yet. Tap Add Lead.</div>`;
+
+  $("jobList").innerHTML=state.jobs.length?state.jobs.map(x=>`<article class="row"><div><b>${escapeHtml(x.customer_name)}</b><div>${escapeHtml(x.service||"")}</div></div><div>${x.job_date||""}</div><div>${escapeHtml(x.status||"")}</div></article>`).join(""):`<div class="card muted">No jobs yet.</div>`;
+  $("estimateList").innerHTML=state.estimates.length?state.estimates.map(x=>`<article class="row"><div><b>${escapeHtml(x.customer_name)}</b></div><div>${escapeHtml(x.status||"")}</div><strong>${money(x.amount)}</strong></article>`).join(""):`<div class="card muted">No estimates yet.</div>`;
+  $("invoiceList").innerHTML=state.invoices.length?state.invoices.map(x=>`<article class="row"><div><b>${escapeHtml(x.customer_name)}</b></div><div>${escapeHtml(x.status||"")}</div><strong>${money(x.balance)}</strong></article>`).join(""):`<div class="card muted">No invoices yet.</div>`;
+}
+
+function escapeHtml(value){
+  return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+}
+
+function openLead(){
+  $("leadError").textContent="";
+  $("leadForm").reset();
+  $("leadDialog").showModal();
+}
+$("addLead").addEventListener("click",openLead);
+$("closeLead").addEventListener("click",()=>$("leadDialog").close());
+$("cancelLead").addEventListener("click",()=>$("leadDialog").close());
+
+$("leadForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  $("leadError").textContent="";
+  const payload={
+    name:$("leadName").value.trim(),
+    phone:$("leadPhone").value.trim()||null,
+    email:$("leadEmail").value.trim()||null,
+    city:$("leadCity").value.trim()||null,
+    service:$("leadService").value.trim()||"General Handyman",
+    details:$("leadDetails").value.trim()||null,
+    status:"New",
+    estimated_value:Number($("leadValue").value)||0,
+    source:"Manual"
+  };
+  const {error}=await sb.from("leads").insert(payload);
+  if(error){$("leadError").textContent=error.message;return}
+  $("leadDialog").close();
+  await load();
+});
+
+boot();
